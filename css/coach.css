@@ -193,7 +193,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .rev figcaption{margin-top:auto;color:var(--mute);font-size:13px;font-weight:700;letter-spacing:.04em}
 .rev-more{padding:0 var(--pad);max-width:1400px;margin:24px auto 0}
 .rev-more a{color:var(--volt);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:14px}
-@media (min-width:1100px){.rev-track{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;align-items:start}.rev:first-child{grid-row:span 2}}
+@media (min-width:1100px){.rev-track{display:block;columns:3;column-gap:18px;overflow:visible}.rev{break-inside:avoid;margin:0 0 18px;width:100%}}
 
 /* santosh */
 .santosh{padding:0 var(--pad) clamp(70px,9vw,130px)}
