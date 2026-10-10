@@ -45,7 +45,16 @@
 <!-- 1. HERO -->
 <section class="hero" id="top">
   <div class="hero-pin">
-    <div class="hero-bg" aria-hidden="true"><span class="hero-ghost">MOVE</span></div>
+    <div class="hero-bg" aria-hidden="true">
+      <!-- Slow-motion loop from Salim's training intro film by Jeff (SalimIntro_horiz_02.mp4), 2x slowed, muted -->
+      <!-- [html-validate-disable-next no-autoplay -- muted decorative background loop, paused for reduced motion] -->
+      <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="img/hero-loop-poster.jpg" disablepictureinpicture tabindex="-1">
+        <source src="img/hero-loop.webm" type="video/webm">
+        <source src="img/hero-loop.mp4" type="video/mp4">
+      </video>
+      <span class="hero-shade"></span>
+      <span class="hero-ghost">MOVE</span>
+    </div>
     <div class="hero-copy">
       <p class="eyebrow">Coach Salim Heyaime · Salt Lake County, Utah &amp; online</p>
       <h1 class="hero-title"><span class="line" data-split>Move better.</span><span class="line" data-split>Feel better.</span><span class="line accent" data-split>Live better.</span></h1>

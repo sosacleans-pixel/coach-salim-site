@@ -158,3 +158,11 @@
   }
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();
+
+/* hero video: honor reduced motion (poster stays as background) */
+(function () {
+  var v = document.querySelector('.hero-video');
+  if (!v) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); v.preload = 'none'; return; }
+  var p = v.play(); if (p && p.catch) p.catch(function () {});
+})();
