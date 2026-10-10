@@ -70,7 +70,7 @@
   var chars = $$('.hero-title .char');
   gsap.timeline({ delay: .1 })
     .from('.hero-photo picture', { clipPath: 'inset(100% 0% 0% 0% round 22px)', duration: 1.3, ease: 'expo.inOut' })
-    .from('.hero-img', { scale: 1.3, duration: 1.6, ease: 'expo.out' }, '<.2')
+    // .hero-img now has a CSS Ken Burns loop (see coach.css)
     .from(chars, { yPercent: 115, duration: .9, stagger: .018, ease: 'expo.out' }, '-=1.3')
     .from('.eyebrow:first-child, .hero-sub, .hero-cta, .nav', { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }, '-=.7')
     .from('.hero-tag', { scale: 0, rotate: -40, duration: .7, ease: 'back.out(2)' }, '-=.5');
