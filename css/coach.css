@@ -273,11 +273,3 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* 3 stats after removing certifications */
 .stats ul{grid-template-columns:1fr}
 @media (min-width:600px){.stats ul{grid-template-columns:repeat(3,1fr)}}
-
-/* stipend-friendly */
-.stipend{padding-top:0}
-@media (min-width:1100px){.cards-3{grid-template-columns:repeat(3,1fr);max-width:1200px}}
-.price{font:400 20px/1 var(--f-b);margin:0 0 18px!important;color:var(--mute)}
-.price b{font:400 52px/1 var(--f-d);color:var(--bone)}
-.card-feature .price,.card-feature .price b{color:var(--ink)}
-.stipend-note{max-width:1200px;margin:22px auto 0;padding:0 var(--pad);font-size:13px;color:var(--mute)}
