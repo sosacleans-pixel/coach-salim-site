@@ -270,3 +270,6 @@ ul,ol{margin:0;padding:0;list-style:none}
 .hero-img{object-position:50% 20%;animation:kb-card 18s ease-in-out infinite alternate;transform-origin:50% 35%}
 @keyframes kb-card{from{transform:scale(1)}to{transform:scale(1.07) translate3d(0,-1%,0)}}
 @media (prefers-reduced-motion: reduce){.hero-img{animation:none}}
+/* 3 stats after removing certifications */
+.stats ul{grid-template-columns:1fr}
+@media (min-width:600px){.stats ul{grid-template-columns:repeat(3,1fr)}}

@@ -72,8 +72,7 @@
     .from('.hero-photo picture', { clipPath: 'inset(100% 0% 0% 0% round 22px)', duration: 1.3, ease: 'expo.inOut' })
     // .hero-img now has a CSS Ken Burns loop (see coach.css)
     .from(chars, { yPercent: 115, duration: .9, stagger: .018, ease: 'expo.out' }, '-=1.3')
-    .from('.eyebrow:first-child, .hero-sub, .hero-cta, .nav', { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }, '-=.7')
-    .from('.hero-tag', { scale: 0, rotate: -40, duration: .7, ease: 'back.out(2)' }, '-=.5');
+    .from('.eyebrow:first-child, .hero-sub, .hero-cta, .nav', { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }, '-=.7');
   gsap.to('.hero-ghost', { xPercent: -18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.hero-photo', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
@@ -105,10 +104,6 @@
   gsap.from('.cta-inner', { scale: .92, ease: 'none', scrollTrigger: { trigger: '.cta', start: 'top bottom', end: 'top 35%', scrub: true } });
   gsap.from('.cta-title span', { yPercent: 100, opacity: 0, rotate: 4, duration: 1, stagger: .12, ease: 'expo.out', scrollTrigger: { trigger: '.cta', start: 'top 65%' } });
 
-  /* marquee: scroll-velocity speed + drift */
-  ScrollTrigger.create({ trigger: '.creds', start: 'top bottom', end: 'bottom top', onUpdate: function (s) {
-    var v = Math.min(Math.abs(s.getVelocity()) / 1200, 2.5); $('.mq-track').style.animationDuration = (40 / (1 + v)) + 's';
-  } });
 
   /* how it works: pinned step sequence (desktop) */
   var mm = gsap.matchMedia();
