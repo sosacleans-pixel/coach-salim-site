@@ -1,3 +1,4 @@
-# REMOVE AT LAUNCH: draft preview, keep crawlers out
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://coachsalimheyaime.com/sitemap.xml

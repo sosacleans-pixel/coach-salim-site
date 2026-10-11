@@ -16,8 +16,6 @@ ul,ol{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--volt);outline-offset:3px}
 .lenis.lenis-smooth{scroll-behavior:auto}
 
-/* draft banner (REMOVE AT LAUNCH) */
-.draft-banner{position:fixed;z-index:120;left:0;right:0;bottom:0;background:repeating-linear-gradient(-45deg,var(--volt) 0 14px,#f5b800 14px 28px);color:var(--ink);font:800 12px/1 var(--f-b);letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 12px}
 .ph{display:inline-block;border:1.5px dashed var(--volt);color:var(--volt);font:700 11px/1.3 var(--f-b);letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:6px;margin:6px 0}
 
 /* type */
