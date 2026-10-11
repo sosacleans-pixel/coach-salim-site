@@ -271,3 +271,20 @@ ul,ol{margin:0;padding:0;list-style:none}
 /* 3 stats after removing certifications */
 .stats ul{grid-template-columns:1fr}
 @media (min-width:600px){.stats ul{grid-template-columns:repeat(3,1fr)}}
+
+/* contact form */
+.cform{max-width:720px;margin:0 auto;text-align:left;display:grid;gap:18px}
+.cf-row{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+.cf-field{display:grid;gap:8px}
+.cf-field label{font:800 12px/1.2 var(--f-b);letter-spacing:.16em;text-transform:uppercase}
+.cform input,.cform select,.cform textarea{width:100%;font:500 16px/1.4 var(--f-b);color:var(--ink);background:var(--bone);border:2px solid var(--ink);border-radius:14px;padding:14px 16px}
+.cform textarea{resize:vertical;min-height:130px}
+.cform input:focus-visible,.cform select:focus-visible,.cform textarea:focus-visible{outline:3px solid var(--forest);outline-offset:2px}
+.cform .btn{justify-self:center;cursor:pointer;margin-top:6px}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cta-mail a{color:inherit}
+.thanks{display:none;max-width:560px;margin:0 auto 30px;background:var(--forest);color:var(--bone);border-radius:var(--r);padding:22px 26px}
+.thanks:target{display:block}
+.cta-inner .thanks p{margin:0 auto}
+.thanks .thanks-t{font:400 32px/1.1 var(--f-d);text-transform:uppercase;margin-bottom:8px!important}
+@media (max-width:640px){.cf-row{grid-template-columns:1fr}}
