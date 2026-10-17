@@ -198,7 +198,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* santosh */
 .santosh{padding:0 var(--pad) var(--sec)}
-.santosh-inner{max-width:1400px;margin:0 auto;border-radius:calc(var(--r)*1.5);padding:clamp(40px,6vw,90px);background:linear-gradient(100deg,rgba(14,14,12,.82) 0,rgba(14,14,12,.35) 70%),url("../img/santosh-delicate-arch-1600.webp") center/cover,#8a5a3c;color:var(--bone)}
+.santosh-inner{max-width:1400px;margin:0 auto;border-radius:calc(var(--r)*1.5);padding:clamp(40px,6vw,90px);background:linear-gradient(100deg,rgba(14,14,12,.82) 0,rgba(14,14,12,.35) 70%),url("../img/santosh-beach-1600.webp") 68% 42%/cover,#8a5a3c;color:var(--bone)}
 .santosh .eyebrow{color:var(--bone);opacity:.85}
 .santosh .hl{color:#fff3d6;font-style:normal}
 .santosh p{max-width:56ch;font-size:1.05em}
