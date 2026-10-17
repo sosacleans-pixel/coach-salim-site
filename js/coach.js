@@ -55,9 +55,13 @@
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(function (t) { lenis.raf(t * 1000); }); gsap.ticker.lagSmoothing(0);
   }
-  $$('a[href^="#"]').forEach(function (a) {
+  $$('a[href*="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
-      var id = a.getAttribute('href'); if (id.length < 2) return; var t = $(id); if (!t) return;
+      var href = a.getAttribute('href'); if (!href) return;
+      if (href.indexOf('?') !== -1) return;
+      var id = href.charAt(0) === '#' ? href : href.slice(href.indexOf('#'));
+      if (!id || id.length < 2) return;
+      var t = $(id); if (!t) return;
       e.preventDefault();
       if (lenis) lenis.scrollTo(t, { duration: 1.3 }); else t.scrollIntoView({ behavior: 'smooth' });
     });

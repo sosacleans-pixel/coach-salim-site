@@ -281,6 +281,9 @@ ul,ol{margin:0;padding:0;list-style:none}
 .cform input:focus-visible,.cform select:focus-visible,.cform textarea:focus-visible{outline:3px solid var(--forest);outline-offset:2px}
 .cform .btn{justify-self:center;cursor:pointer;margin-top:6px}
 .cform .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.cform input[readonly]{background:#e8e4db;color:var(--ink);cursor:default}
+.cf-error{display:block;min-height:1.25em;font:600 13px/1.35 var(--f-b);letter-spacing:.02em;text-transform:none;color:#8b1a1a}
+.cf-field.is-invalid input,.cf-field.is-invalid select,.cf-field.is-invalid textarea{border-color:#8b1a1a}
 .cta-mail a{color:inherit}
 .thanks{display:none;max-width:560px;margin:0 auto 30px;background:var(--forest);color:var(--bone);border-radius:var(--r);padding:22px 26px}
 .thanks:target{display:block}

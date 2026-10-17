@@ -92,28 +92,28 @@
     <p class="lede">Online coaching runs through the Salim Coach app: customized workouts based on your schedule and equipment, nutrition guidance based on how you actually eat, and daily accountability.</p>
   </div>
   <div class="cards">
-    <article class="card">
+    <article class="card" data-service-slug="fitness-nutrition-text">
       <span class="card-num">01</span><p class="card-kind">Online</p>
       <h3>Fitness, Nutrition &amp; Accountability via Text</h3>
       <p>A supportive option focused on building consistency without overwhelm. Clear structure, professional support, and the flexibility to train on your own schedule.</p>
       <ul class="ticks"><li>Weekly customized workouts</li><li>Personalized nutrition guidance</li><li>Daily accountability check-ins</li><li>Unlimited in-app messaging</li></ul>
       <a class="card-link" href="#contact">Ask about this program →</a>
     </article>
-    <article class="card">
+    <article class="card" data-service-slug="balanced-wellness-monthly">
       <span class="card-num">02</span><p class="card-kind">Online · month-to-month</p>
       <h3>Balanced Wellness Monthly</h3>
       <p>Consistent support without a long-term commitment. Built to keep you on track, build strength and improve mobility, with room to adapt as your goals and schedule change.</p>
       <ul class="ticks"><li>1 live virtual session every week</li><li>Workouts updated weekly</li><li>Full nutrition coaching</li><li>Daily accountability in the app</li></ul>
       <a class="card-link" href="#contact">Ask about this program →</a>
     </article>
-    <article class="card card-feature">
+    <article class="card card-feature" data-service-slug="balanced-wellness-6-month">
       <span class="card-num">03</span><p class="card-kind">Online · 6 months</p>
       <h3>Balanced Wellness 6-Month</h3>
       <p>A longer-term program built for meaningful, lasting change, with the time and structure to progress with intention and build habits that carry well beyond it.</p>
       <ul class="ticks"><li>1 live virtual session every week</li><li>Continuously updated workouts</li><li>Full nutrition coaching &amp; daily accountability</li><li>Savings for the 6-month commitment</li></ul>
       <a class="card-link" href="#contact">Ask about this program →</a>
     </article>
-    <article class="card card-photo">
+    <article class="card card-photo" data-service-slug="utah-training">
       <span class="card-num">04</span><p class="card-kind">In person · Utah</p>
       <h3>Utah Training</h3>
       <p>Train in the gym, at a home gym, on the trails or in the mountains, with real-time coaching and Utah's elevation and terrain behind you. Multi-session packages and half- or full-day experiences are available.</p>
@@ -233,24 +233,23 @@
       <p>Coach Salim will reply by email, usually within a day or two.</p>
     </div>
     <form class="cform" action="https://formsubmit.co/coachsalimheyaime@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New coaching inquiry from coachsalimheyaime.com">
+      <input type="hidden" name="_subject" value="New inquiry: General question">
       <input type="hidden" name="_next" value="https://coachsalimheyaime.com/#thanks">
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="cf-row">
-        <div class="cf-field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" autocomplete="name" required></div>
-        <div class="cf-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="cf-field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" autocomplete="name" required minlength="2"><span class="cf-error" id="cf-name-err" role="alert"></span></div>
+        <div class="cf-field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" inputmode="email" autocomplete="email" required pattern="[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+"><span class="cf-error" id="cf-email-err" role="alert"></span></div>
       </div>
-      <div class="cf-field"><label for="cf-goal">Goal / program interest <span style="font-weight:600;letter-spacing:.06em;text-transform:none">(optional)</span></label>
-        <select id="cf-goal" name="goal">
-          <option value="" selected>Choose one (optional)…</option>
-          <option>1:1 coaching</option>
-          <option>Nutrition</option>
-          <option>HYROX / race prep</option>
-          <option>Utah in-person training</option>
-          <option>General inquiry</option>
-        </select></div>
-      <div class="cf-field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" rows="5" required placeholder="Tell me about your goals"></textarea></div>
+      <div class="cf-field"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(801) 555-1234"><span class="cf-error" id="cf-phone-err" role="alert"></span></div>
+      <div class="cf-field" id="cf-service-wrap">
+        <label for="cf-service-readonly">Service</label>
+        <input id="cf-service-readonly" type="text" readonly aria-readonly="true" hidden>
+        <input type="hidden" name="service" id="cf-service-hidden" value="">
+        <select id="cf-service-select" name="service" required hidden></select>
+        <span class="cf-error" id="cf-service-err" role="alert"></span>
+      </div>
+      <div class="cf-field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" rows="5" required placeholder="Tell me about your goals"></textarea><span class="cf-error" id="cf-msg-err" role="alert"></span></div>
       <button class="btn btn-dark btn-xl" type="submit">Send message</button>
     </form>
     <p class="cta-mail">or email <a href="mailto:coachsalimheyaime@gmail.com">coachsalimheyaime@gmail.com</a></p>
@@ -274,5 +273,6 @@
 <script src="js/vendor/ScrollTrigger.min.js" defer></script>
 <script src="js/vendor/lenis.min.js" defer></script>
 <script src="js/coach.js" defer></script>
+<script src="js/contact-form.js" defer></script>
 </body>
 </html>
