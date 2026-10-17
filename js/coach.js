@@ -92,13 +92,13 @@
   });
   gsap.from('.stat', { y: 50, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.stats', start: 'top 85%' } });
 
-  gsap.from('.card', { y: 80, opacity: 0, rotate: 1.5, duration: 1, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.cards', start: 'top 80%' } });
+  // fromTo with explicit end values: .card has a CSS transform transition, which made gsap.from read a mid-transition end state and leave cards stuck 80px low (overlapping the book)
+  gsap.fromTo('.card', { y: 80, opacity: 0, rotate: 1.5 }, { y: 0, opacity: 1, rotate: 0, duration: 1, stagger: .1, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '.cards', start: 'top 80%' } });
   gsap.from('.book > *', { y: 60, opacity: 0, duration: 1, stagger: .15, ease: 'power3.out', scrollTrigger: { trigger: '.book', start: 'top 80%' } });
   gsap.from('.cred-grid li', { y: 40, opacity: 0, duration: .7, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: '.cred-grid', start: 'top 85%' } });
   gsap.from('.spec', { y: 40, opacity: 0, duration: .7, stagger: .06, ease: 'power3.out', scrollTrigger: { trigger: '.spec-grid', start: 'top 85%' } });
   gsap.from('.rev', { x: 80, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.rev-track', start: 'top 85%' } });
   gsap.from('.acc-item', { y: 24, opacity: 0, duration: .6, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: '.acc', start: 'top 85%' } });
-  gsap.from('.about-sticker', { rotate: -200, scale: .4, ease: 'none', scrollTrigger: { trigger: '.about', start: 'top 85%', end: 'top 30%', scrub: true } });
   gsap.to('.scrub-words .w', { opacity: 1, stagger: .05, ease: 'none', scrollTrigger: { trigger: '.scrub-words', start: 'top 80%', end: 'bottom 45%', scrub: true } });
   gsap.from('.santosh-inner', { clipPath: 'inset(8% 6% 8% 6% round 60px)', ease: 'none', scrollTrigger: { trigger: '.santosh', start: 'top bottom', end: 'top 35%', scrub: true } });
   gsap.from('.cta-inner', { scale: .92, ease: 'none', scrollTrigger: { trigger: '.cta', start: 'top bottom', end: 'top 35%', scrub: true } });
@@ -126,7 +126,7 @@
     gsap.from('.how-step', { y: 50, opacity: 0, duration: .8, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.how-steps', start: 'top 85%' } });
   });
 
-  /* magnetic + cursor (desktop) */
+  /* magnetic (desktop); the kettlebell cursor is pure CSS (coach.css) */
   if (fine) {
     $$('.magnetic').forEach(function (b) {
       var xTo = gsap.quickTo(b, 'x', { duration: .6, ease: 'elastic.out(1,.4)' }), yTo = gsap.quickTo(b, 'y', { duration: .6, ease: 'elastic.out(1,.4)' });
@@ -138,18 +138,6 @@
         gsap.to(c, { rotateY: x * 8, rotateX: -y * 6, transformPerspective: 900, duration: .5, ease: 'power2.out' }); });
       c.addEventListener('pointerleave', function () { gsap.to(c, { rotateY: 0, rotateX: 0, duration: .8, ease: 'elastic.out(1,.5)' }); });
     });
-    document.body.classList.add('has-cursor');
-    var cur = $('.cursor'), dot = $('.cursor-dot'), ring = $('.cursor-ring'), label = $('.cursor-label');
-    var dx = gsap.quickTo(dot, 'x', { duration: .08 }), dy = gsap.quickTo(dot, 'y', { duration: .08 });
-    var rx = gsap.quickTo(ring, 'x', { duration: .45, ease: 'power3.out' }), ry = gsap.quickTo(ring, 'y', { duration: .45, ease: 'power3.out' });
-    gsap.set([dot, ring], { opacity: 0 }); var seen = false;
-    window.addEventListener('pointermove', function (e) { if (!seen) { seen = true; gsap.to([dot, ring], { opacity: 1, duration: .3 }); } dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
-    document.addEventListener('pointerover', function (e) {
-      var card = e.target.closest('.card'), link = e.target.closest('a, button');
-      cur.classList.toggle('is-card', !!card && !link); cur.classList.toggle('is-link', !!link);
-      label.textContent = card && !link ? 'Ask' : '';
-    });
-    document.addEventListener('pointerleave', function () { gsap.to([dot, ring], { opacity: 0 }); });
   }
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();
