@@ -1,0 +1,67 @@
+/* Lead pop-up (js/popup.js). Uses the tokens and .btn styles from coach.css. */
+.pop{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;pointer-events:none}
+.pop[hidden],.pop-view[hidden]{display:none!important}
+.pop-backdrop{position:absolute;inset:0;background:rgba(14,14,12,.74);opacity:0;transition:opacity .26s var(--ease)}
+.pop[data-state=ask] .pop-backdrop{display:none}
+.pop:not([data-state=ask]){pointer-events:auto}
+.pop.is-in .pop-backdrop{opacity:1}
+
+.pop-dialog{pointer-events:auto;position:relative;width:min(100%,460px);max-height:calc(100vh - 48px);max-height:calc(100dvh - 48px);overflow:auto;overscroll-behavior:contain;
+  background:var(--ink-2);color:var(--bone);border:1px solid #2a2a26;border-top:4px solid var(--volt);border-radius:var(--r);
+  padding:34px 30px 28px;box-shadow:0 30px 80px rgba(0,0,0,.55);font-family:var(--f-b);
+  opacity:0;transform:translateY(18px) scale(.98);transition:opacity .26s var(--ease),transform .32s var(--ease)}
+.pop.is-in .pop-dialog{opacity:1;transform:none}
+.pop-dialog:focus{outline:none}
+
+.pop-eyebrow{font:800 12px/1.2 var(--f-b);letter-spacing:.22em;text-transform:uppercase;color:var(--volt);margin:0 0 12px}
+.pop-title{font:400 clamp(30px,2.6vw,40px)/1 var(--f-d);text-transform:uppercase;margin:0 52px 22px 0}
+.pop-title:focus{outline:none}
+.pop-sub{color:#d9d5ca;margin:-10px 0 20px;font-size:15px}
+.pop-thanks .pop-sub{margin-bottom:24px}
+
+.pop-actions{display:grid;gap:12px}
+.pop .btn{width:100%;justify-content:center;text-align:center;min-height:48px;cursor:pointer;line-height:1.15}
+.pop .btn:disabled{opacity:.7;cursor:progress}
+
+/* close (44px target) */
+.pop-x{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(244,241,234,.35);background:transparent;color:var(--bone);cursor:pointer;display:grid;place-items:center;padding:0;transition:border-color .3s,color .3s}
+.pop-x:hover{border-color:var(--volt);color:var(--volt)}
+.pop-x span,.pop-x span::before{display:block;width:16px;height:2px;background:currentColor;transform:rotate(45deg);border-radius:2px}
+.pop-x span::before{content:"";transform:rotate(90deg)}
+
+/* form */
+.pop-form{display:grid;gap:14px}
+.pop-form .pop-title,.pop-form .pop-sub{margin-bottom:0}
+.pop-form .pop-sub{margin-top:-4px}
+.pop-field{display:grid;gap:7px}
+.pop-field label{font:800 12px/1.2 var(--f-b);letter-spacing:.16em;text-transform:uppercase;color:var(--bone)}
+.pop-field input,.pop-field textarea{width:100%;font:500 16px/1.4 var(--f-b);color:var(--ink);background:var(--bone);border:2px solid var(--bone);border-radius:14px;padding:12px 14px;min-height:48px}
+.pop-field textarea{resize:vertical;min-height:110px}
+.pop-field input:focus-visible,.pop-field textarea:focus-visible{outline:3px solid var(--volt);outline-offset:2px}
+.pop-field.is-invalid input,.pop-field.is-invalid textarea{border-color:#ff6b5b}
+.pop-err{display:block;min-height:0;font:600 13px/1.35 var(--f-b);color:#ffa497}
+.pop-err:empty{display:none}
+.pop-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.pop-fail{margin:0;padding:12px 14px;border-radius:12px;background:rgba(255,107,91,.12);border:1px solid rgba(255,107,91,.5);color:#ffd2cb;font-size:14px;font-weight:600}
+.pop-fail[hidden]{display:none}
+
+/* page scroll is locked only while the form / thank-you is open */
+html.pop-lock,html.pop-lock body{overflow:hidden}
+
+/* mobile: bottom sheet; question state stays within ~40% of the viewport */
+@media (max-width:640px){
+  .pop{align-items:flex-end;padding:0}
+  .pop-dialog{width:100%;border-radius:var(--r) var(--r) 0 0;border-left:0;border-right:0;border-bottom:0;
+    padding:22px 20px calc(20px + env(safe-area-inset-bottom));max-height:92vh;max-height:92dvh;transform:translateY(100%)}
+  .pop[data-state=ask] .pop-dialog{max-height:40vh;max-height:40svh}
+  .pop-eyebrow{margin-bottom:8px}
+  .pop-title{font-size:28px;margin-bottom:16px}
+  .pop-actions{gap:10px}
+  .pop .btn{padding:14px 20px}
+  .pop-field textarea{min-height:90px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .pop-dialog,.pop-backdrop,.pop-x{transition:none}
+  .pop-dialog{transform:none}
+}
