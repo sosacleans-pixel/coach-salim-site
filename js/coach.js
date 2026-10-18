@@ -99,7 +99,6 @@
   // fromTo with explicit end values: .card has a CSS transform transition, which made gsap.from read a mid-transition end state and leave cards stuck 80px low (overlapping the book)
   gsap.fromTo('.card', { y: 80, opacity: 0, rotate: 1.5 }, { y: 0, opacity: 1, rotate: 0, duration: 1, stagger: .1, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '.cards', start: 'top 80%' } });
   gsap.from('.book > *', { y: 60, opacity: 0, duration: 1, stagger: .15, ease: 'power3.out', scrollTrigger: { trigger: '.book', start: 'top 80%' } });
-  gsap.from('.cred-grid li', { y: 40, opacity: 0, duration: .7, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: '.cred-grid', start: 'top 85%' } });
   gsap.from('.spec', { y: 40, opacity: 0, duration: .7, stagger: .06, ease: 'power3.out', scrollTrigger: { trigger: '.spec-grid', start: 'top 85%' } });
   gsap.from('.rev', { x: 80, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.rev-track', start: 'top 85%' } });
   gsap.from('.acc-item', { y: 24, opacity: 0, duration: .6, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: '.acc', start: 'top 85%' } });
