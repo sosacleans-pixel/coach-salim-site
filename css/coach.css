@@ -20,6 +20,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 /* type */
 .eyebrow{font:800 12px/1.2 var(--f-b);letter-spacing:.22em;text-transform:uppercase;color:var(--volt);margin:0 0 18px}
+@media (max-width:640px){.hero-copy .eyebrow{letter-spacing:.16em}.hero-copy .eb-name{display:none}}
 .h2{font:400 clamp(44px,7.2vw,112px)/.92 var(--f-d);text-transform:uppercase;letter-spacing:-.005em}
 .h3{font:400 clamp(32px,4vw,56px)/1 var(--f-d);text-transform:uppercase}
 .hl{color:var(--volt)}
