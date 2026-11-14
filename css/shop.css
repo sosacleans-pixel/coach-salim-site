@@ -1,0 +1,165 @@
+/* Draft shop page. Uses the site palette, type, and components from coach.css. */
+
+.shop-page .nav{
+  position:sticky;
+  top:0;
+  background:rgba(14,14,12,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+
+.draft-banner{
+  margin:0;
+  background:var(--volt);
+  color:var(--ink);
+  text-align:center;
+  font:800 clamp(14px,1.6vw,16px)/1.35 var(--f-b);
+  letter-spacing:.01em;
+  padding:14px var(--pad);
+}
+
+.shop-wrap{max-width:1400px;margin:0 auto;padding:0 var(--pad)}
+
+.shop-hero{padding:clamp(40px,6vw,88px) 0 clamp(12px,2vw,28px)}
+.shop-hero h1{
+  font:400 clamp(46px,8vw,104px)/.92 var(--f-d);
+  text-transform:uppercase;
+  letter-spacing:-.005em;
+  margin:0 0 18px;
+  max-width:11ch;
+}
+.shop-hero .lede{margin:0}
+
+.shop-products{padding:clamp(36px,5vw,72px) 0 var(--sec)}
+.shop-products .sec-head{padding:0;margin-bottom:28px}
+.shop-products .h2{max-width:12ch}
+
+.shop-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:1fr;
+}
+@media (min-width:640px){
+  .shop-grid{grid-template-columns:1fr 1fr;gap:18px}
+}
+@media (min-width:1024px){
+  .shop-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+.shop-card{
+  display:flex;
+  flex-direction:column;
+  background:var(--ink-2);
+  border:1px solid #2a2a26;
+  border-radius:var(--r);
+  overflow:hidden;
+  min-width:0;
+}
+.shop-card.is-soon{border-style:dashed}
+.shop-art{
+  position:relative;
+  background:
+    radial-gradient(90% 80% at 70% 20%,rgba(255,202,16,.14),transparent 55%),
+    #121210;
+}
+.shop-art svg{display:block;width:100%;height:auto}
+.shop-flag{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:var(--volt);
+  color:var(--ink);
+  font:800 12px/1 var(--f-b);
+  letter-spacing:.04em;
+  padding:8px 10px;
+  border-radius:999px;
+}
+.shop-body{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:18px 18px 20px;
+  flex:1;
+}
+.shop-card h3{
+  font:400 clamp(26px,2.4vw,34px)/1 var(--f-d);
+  text-transform:uppercase;
+  margin:0;
+}
+.shop-desc{margin:0;color:#cfcbc0;font-size:15px}
+.shop-price{
+  margin:0;
+  font:800 13px/1.2 var(--f-b);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--volt);
+}
+.shop-buy{margin-top:auto;justify-content:center;width:100%}
+button.shop-buy:disabled,
+button.shop-buy:disabled:hover{
+  --bg:#2a2a26;
+  --fg:#8a877c;
+  background:#2a2a26;
+  color:#8a877c;
+  border-color:#2a2a26;
+  cursor:not-allowed;
+  transform:none;
+}
+
+.shop-how{background:var(--bone);color:var(--ink);padding:var(--sec) 0}
+.shop-how .eyebrow{color:var(--forest)}
+.shop-how .hl{color:var(--forest)}
+.shop-how h2{
+  font:400 clamp(40px,6vw,80px)/.96 var(--f-d);
+  text-transform:uppercase;
+  margin:0 0 18px;
+  max-width:11ch;
+}
+.shop-how .lede{color:#3b3a35;margin:0 0 28px}
+.shop-steps{display:grid;gap:16px}
+@media (min-width:800px){
+  .shop-steps{grid-template-columns:1fr 1fr}
+}
+.shop-step{
+  background:#fff;
+  border:1px solid #e3ded2;
+  border-radius:var(--r);
+  padding:28px;
+}
+.shop-step h3{
+  font:400 clamp(26px,2.6vw,34px)/1 var(--f-d);
+  text-transform:uppercase;
+  margin:0 0 10px;
+}
+.shop-step p{margin:0;color:#45443e}
+
+.shop-policies{padding:var(--sec) 0}
+.shop-policies h2{
+  font:400 clamp(40px,6vw,80px)/.96 var(--f-d);
+  text-transform:uppercase;
+  margin:0 0 28px;
+  max-width:12ch;
+}
+.shop-policy-grid{display:grid;gap:16px}
+@media (min-width:760px){
+  .shop-policy-grid{grid-template-columns:repeat(3,1fr)}
+}
+.shop-policy{
+  background:var(--ink-2);
+  border:1px solid #2a2a26;
+  border-radius:var(--r);
+  padding:24px;
+}
+.shop-policy h3{
+  font:400 32px/1 var(--f-d);
+  text-transform:uppercase;
+  margin:0 0 12px;
+}
+.shop-policy p{margin:0 0 10px;color:#d6d2c7}
+.shop-policy p:last-child{margin-bottom:0}
+.shop-tbd{
+  color:var(--volt);
+  font:800 13px/1 var(--f-b);
+  letter-spacing:.12em;
+}
+.shop-policy a{color:var(--volt)}
