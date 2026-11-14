@@ -81,10 +81,41 @@
   padding:18px 18px 20px;
   flex:1;
 }
-.shop-card h3{
+.shop-card h3,
+.shop-card h4{
   font:400 clamp(26px,2.4vw,34px)/1 var(--f-d);
   text-transform:uppercase;
   margin:0;
+}
+.shop-supplements{
+  grid-column:1 / -1;
+  display:grid;
+  gap:14px;
+  margin-top:8px;
+  padding-top:22px;
+  border-top:1px solid #2a2a26;
+}
+.shop-group-title{
+  margin:0;
+  font:800 12px/1.2 var(--f-b);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--volt);
+}
+.shop-supp-grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:1fr;
+}
+@media (min-width:640px){
+  .shop-supp-grid{grid-template-columns:1fr 1fr;gap:18px}
+}
+.shop-fda{
+  margin:0;
+  max-width:72ch;
+  color:var(--mute);
+  font-size:13px;
+  line-height:1.5;
 }
 .shop-desc{margin:0;color:#cfcbc0;font-size:15px}
 .shop-price{
