@@ -233,6 +233,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .cta-title span{display:inline-block}
 .cta-inner p{max-width:46ch;margin:0 auto 34px;font-weight:600;font-size:1.1em}
 .cta-mail{margin:22px auto 0!important;font-weight:800!important;letter-spacing:.04em}
+.cta-store{margin:22px auto 0}
 
 /* footer */
 .foot{padding:60px var(--pad) 90px;text-align:center;display:grid;justify-items:center;gap:20px}
