@@ -46,7 +46,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 #nav-links a:not(.btn){text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;position:relative}
 #nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--volt);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 #nav-links a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
-@media (max-width:959px){
+#nav-links a.nav-store{display:inline-flex;flex-direction:column;justify-content:center;align-items:flex-start;line-height:1.1;text-align:left}
+#nav-links a.nav-store span{display:block;white-space:nowrap}
+#nav-links a.nav-store::after{bottom:-3px}
+@media (max-width:860px){
   .nav-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;width:46px;height:46px;border:0;border-radius:50%;background:var(--volt);cursor:pointer;align-items:center}
   .nav-toggle span:not(.sr){width:20px;height:2px;background:var(--ink);transition:transform .3s}
   .nav-toggle[aria-expanded=true] span:nth-child(1){transform:translateY(4px) rotate(45deg)}
@@ -54,6 +57,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   #nav-links{position:fixed;inset:0;z-index:-1;flex-direction:column;justify-content:center;gap:26px;background:var(--ink);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
   #nav-links.open{opacity:1;visibility:visible}
   #nav-links a:not(.btn){font:400 44px/1 var(--f-d)}
+  #nav-links a.nav-store{align-items:center;text-align:center;line-height:.9}
 }
 
 /* hero */
