@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /shop
 Allow: /
 
 Sitemap: https://coachsalimheyaime.com/sitemap.xml
