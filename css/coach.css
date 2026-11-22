@@ -248,12 +248,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .foot-legal{margin:0;font-weight:700}
 .foot-small{margin:0;color:var(--mute);font-size:13px}
 
-/* cursor (desktop): mini kettlebell by default, normal pointer/text cursor on interactive elements */
-@media (hover:hover) and (pointer:fine){
-  html,body{cursor:url("../img/kettlebell-cursor.svg") 14 4,url("../img/kettlebell-cursor.png") 14 4,auto}
-  a,button,summary,select,label,[role=button],.acc button,.nav-toggle,.btn,input[type=submit],input[type=checkbox],input[type=radio]{cursor:pointer}
-  input:not([type=submit]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]{cursor:text}
-}
+a,button,summary,select,label,[role=button],.btn,input[type=submit],input[type=checkbox],input[type=radio]{cursor:pointer}
 
 /* reduced motion */
 @media (prefers-reduced-motion:reduce){
