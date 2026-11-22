@@ -5,8 +5,9 @@
   --pad:clamp(20px,5vw,72px); --sec:clamp(72px,9vw,128px); --r:22px; --ease:cubic-bezier(.2,.8,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:110px}
 body{margin:0;background:var(--ink);color:var(--bone);font:400 clamp(16px,1.05vw,18px)/1.6 var(--f-b);overflow-x:hidden}
+#contact,#programs,#how,#about,#faq,#thanks,#book,#stats,#specialties,#reviews{scroll-margin-top:110px}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 h1,h2,h3{margin:0;font-weight:400}
@@ -41,8 +42,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 .nav{position:fixed;z-index:100;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);transition:background .4s,padding .4s}
 .nav.scrolled{background:rgba(14,14,12,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding-top:8px;padding-bottom:8px}
 .brand img{width:clamp(120px,11vw,160px);height:auto}
+.brand,.nav-toggle{position:relative;z-index:2}
 .nav-toggle{display:none}
 #nav-links{display:flex;align-items:center;gap:30px}
+html.nav-lock,html.nav-lock body{overflow:hidden}
 #nav-links a:not(.btn){text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;position:relative}
 #nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--volt);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 #nav-links a:not(.btn):hover::after{transform:scaleX(1);transform-origin:left}
@@ -54,7 +57,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   .nav-toggle span:not(.sr){width:20px;height:2px;background:var(--ink);transition:transform .3s}
   .nav-toggle[aria-expanded=true] span:nth-child(1){transform:translateY(4px) rotate(45deg)}
   .nav-toggle[aria-expanded=true] span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
-  #nav-links{position:fixed;inset:0;z-index:-1;flex-direction:column;justify-content:center;gap:26px;background:var(--ink);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+  #nav-links{position:fixed;inset:0;z-index:1;flex-direction:column;justify-content:center;gap:26px;background:var(--ink);opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
   #nav-links.open{opacity:1;visibility:visible}
   #nav-links a:not(.btn){font:400 44px/1 var(--f-d)}
   #nav-links a.nav-store{align-items:center;text-align:center;line-height:.9}
@@ -80,6 +83,16 @@ ul,ol{margin:0;padding:0;list-style:none}
 .hero-tag{position:absolute;left:-14px;bottom:24px;background:var(--bone);color:var(--ink);font:800 12px/1 var(--f-b);letter-spacing:.12em;text-transform:uppercase;padding:12px 16px;border-radius:999px;transform:rotate(-4deg);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .hero-tag span{font:400 22px/1 var(--f-d);vertical-align:-3px;margin-right:4px}
 .hero-scroll{display:none}
+@media (max-width:600px){
+  .hero-pin{padding:84px var(--pad) 16px}
+  .hero-photo{width:min(48vw,200px);margin:0 0 10px}
+  .hero-photo picture{aspect-ratio:1/1}
+  .hero-img{object-position:50% 16%}
+  .hero-title{font-size:clamp(44px,12.2vw,56px);margin-bottom:10px}
+  .hero-sub{margin:0 0 12px;font-size:15px;line-height:1.45}
+  .hero-cta{gap:10px}
+  .hero-cta .btn{padding:14px 18px;font-size:13px}
+}
 @media (min-width:900px){
   .hero-pin{grid-template-columns:1.25fr .75fr;gap:4vw;align-items:center;padding-top:120px}
   .hero-title{font-size:clamp(58px,7.6vw,138px)}
@@ -120,6 +133,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .card-feature .card-link{color:var(--ink)}
 .card-photo{background:linear-gradient(160deg,var(--forest),#0f3a14)}
 .card-photo p{color:#dfe9dc}.card-photo .card-kind{color:#b9d0b4}
+.card-photo .card-link{color:var(--volt)}
 .book{position:relative;z-index:1;max-width:1400px;margin:clamp(96px,10vw,140px) auto 0;padding:0 var(--pad);display:grid;gap:30px;align-items:center}
 .book>img{width:min(100%,420px);justify-self:center;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))}
 .book p{color:#d6d2c7;max-width:52ch}

@@ -132,9 +132,7 @@
   }
 
   function digitsOnlyPhone(raw) {
-    var d = (raw || '').replace(/\D/g, '');
-    if (d.length === 11 && d.charAt(0) === '1') d = d.slice(1);
-    return d;
+    return (raw || '').replace(/\D/g, '');
   }
 
   function formatUsPhone(digits) {
@@ -183,13 +181,28 @@
   }
 
   function validatePhone() {
-    var d = digitsOnlyPhone(phoneInput.value);
-    if (d.length !== 10) {
-      setFieldError(phoneInput, 'Enter a 10-digit US phone number.');
+    var raw = (phoneInput.value || '').trim();
+    if (!raw) {
+      clearFieldError(phoneInput);
+      return true;
+    }
+    var d = digitsOnlyPhone(raw);
+    if (d.length < 7 || d.length > 15) {
+      setFieldError(phoneInput, 'Enter a phone number with 7 to 15 digits, or leave this blank.');
       return false;
     }
     clearFieldError(phoneInput);
     return true;
+  }
+
+  function formatPhoneForSubmit(raw) {
+    var trimmed = (raw || '').trim();
+    if (!trimmed) return '';
+    var d = digitsOnlyPhone(trimmed);
+    if (d.length === 10) return formatUsPhone(d);
+    if (d.length === 11 && d.charAt(0) === '1') return '+1 ' + formatUsPhone(d.slice(1));
+    if (d.charAt(0) === '0' && d.charAt(1) === '0') d = d.slice(2);
+    return '+' + d;
   }
 
   function validateService() {
@@ -274,7 +287,7 @@
       if (firstInvalid) firstInvalid.focus();
       return;
     }
-    phoneInput.value = formatUsPhone(digitsOnlyPhone(phoneInput.value));
+    phoneInput.value = formatPhoneForSubmit(phoneInput.value);
     updateSubjectField();
   });
 
