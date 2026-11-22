@@ -83,6 +83,16 @@ html.nav-lock,html.nav-lock body{overflow:hidden}
 .hero-tag{position:absolute;left:-14px;bottom:24px;background:var(--bone);color:var(--ink);font:800 12px/1 var(--f-b);letter-spacing:.12em;text-transform:uppercase;padding:12px 16px;border-radius:999px;transform:rotate(-4deg);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .hero-tag span{font:400 22px/1 var(--f-d);vertical-align:-3px;margin-right:4px}
 .hero-scroll{display:none}
+@media (max-width:600px){
+  .hero-pin{padding:84px var(--pad) 16px}
+  .hero-photo{width:min(48vw,200px);margin:0 0 10px}
+  .hero-photo picture{aspect-ratio:1/1}
+  .hero-img{object-position:50% 16%}
+  .hero-title{font-size:clamp(44px,12.2vw,56px);margin-bottom:10px}
+  .hero-sub{margin:0 0 12px;font-size:15px;line-height:1.45}
+  .hero-cta{gap:10px}
+  .hero-cta .btn{padding:14px 18px;font-size:13px}
+}
 @media (min-width:900px){
   .hero-pin{grid-template-columns:1.25fr .75fr;gap:4vw;align-items:center;padding-top:120px}
   .hero-title{font-size:clamp(58px,7.6vw,138px)}
