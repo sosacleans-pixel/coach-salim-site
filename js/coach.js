@@ -31,10 +31,16 @@
 
   /* basics (no GSAP needed) */
   var tog = $('.nav-toggle'), list = $('#nav-links'), nav = $('.nav');
-  function closeMenu() { tog.setAttribute('aria-expanded', 'false'); list.classList.remove('open'); }
-  tog.addEventListener('click', function () { var o = tog.getAttribute('aria-expanded') === 'true'; tog.setAttribute('aria-expanded', String(!o)); list.classList.toggle('open', !o); });
+  function setMenuOpen(open) {
+    tog.setAttribute('aria-expanded', String(open));
+    list.classList.toggle('open', open);
+    doc.classList.toggle('nav-lock', open);
+  }
+  function closeMenu() { setMenuOpen(false); }
+  tog.addEventListener('click', function () { setMenuOpen(tog.getAttribute('aria-expanded') !== 'true'); });
   $$('#nav-links a').forEach(function (a) { a.addEventListener('click', closeMenu); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) closeMenu(); });
   window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
   $$('.acc button').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -76,7 +82,7 @@
     .from('.hero-photo picture', { clipPath: 'inset(100% 0% 0% 0% round 22px)', duration: 1.3, ease: 'expo.inOut' })
     // .hero-img now has a CSS Ken Burns loop (see coach.css)
     .from(chars, { yPercent: 115, duration: .9, stagger: .018, ease: 'expo.out' }, '-=1.3')
-    .from('.eyebrow:first-child, .hero-sub, .hero-cta, .nav', { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }, '-=.7');
+    .from('.eyebrow:first-child, .hero-sub, .hero-cta', { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }, '-=.7');
   gsap.to('.hero-ghost', { xPercent: -18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
   gsap.to('.hero-photo', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
 
