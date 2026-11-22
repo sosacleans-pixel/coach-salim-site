@@ -1,0 +1,37 @@
+/* Coming soon page for Things I Use and Trust. No added motion. */
+.store-page{min-height:100svh;display:flex;flex-direction:column}
+.store-main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  width:100%;
+  padding:130px var(--pad) 48px;
+}
+.store-hero{
+  width:100%;
+  max-width:1400px;
+  margin:0 auto;
+  display:grid;
+  gap:40px;
+  align-items:center;
+}
+.store-copy .h2{margin:0 0 22px}
+.store-copy .lede{margin:0 0 32px}
+.store-art{margin:0}
+.store-art picture{display:block;border-radius:var(--r);overflow:hidden;background:#f4f1ea}
+.store-art img{width:100%;height:auto;display:block}
+.store-cta{display:flex;flex-wrap:wrap;gap:12px}
+#nav-links a[aria-current="page"]::after{transform:scaleX(1);transform-origin:left}
+.store-page .nav{
+  background:rgba(14,14,12,.86);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+@media (max-width:899px){
+  .store-main{padding-top:110px;padding-bottom:36px;align-items:start}
+  .store-art{order:-1}
+  .store-copy .h2{font-size:clamp(44px,14vw,72px)}
+}
+@media (min-width:900px){
+  .store-hero{grid-template-columns:1fr 1.2fr;gap:5vw}
+}
