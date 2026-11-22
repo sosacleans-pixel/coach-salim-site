@@ -129,7 +129,7 @@
     gsap.from('.how-step', { y: 50, opacity: 0, duration: .8, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.how-steps', start: 'top 85%' } });
   });
 
-  /* magnetic (desktop); the kettlebell cursor is pure CSS (coach.css) */
+  /* magnetic (desktop) */
   if (fine) {
     $$('.magnetic').forEach(function (b) {
       var xTo = gsap.quickTo(b, 'x', { duration: .6, ease: 'elastic.out(1,.4)' }), yTo = gsap.quickTo(b, 'y', { duration: .6, ease: 'elastic.out(1,.4)' });
