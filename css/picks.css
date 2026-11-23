@@ -82,11 +82,29 @@
   letter-spacing:0;
 }
 .pick-blurb{
-  margin:0 0 22px;
+  margin:0 0 16px;
   color:#d9d5ca;
-  flex:1;
 }
-.pick-card .btn{align-self:flex-start}
+.pick-take{
+  margin:0 0 22px;
+  flex:1;
+  padding-top:14px;
+  border-top:1px solid rgba(244,241,234,.12);
+}
+.pick-take-label{
+  margin:0 0 8px;
+  font:800 11px/1 var(--f-b);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--volt);
+}
+.pick-take-text{
+  margin:0;
+  color:#d9d5ca;
+  font-size:15px;
+  line-height:1.5;
+}
+.pick-card .btn,.pick-soon{align-self:flex-start;margin-top:auto}
 .pick-soon{
   margin:0;
   font:800 13px/1 var(--f-b);
