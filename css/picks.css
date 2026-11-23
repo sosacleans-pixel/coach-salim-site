@@ -25,6 +25,7 @@
   margin:0 auto;
 }
 .picks-section .h3{margin:0 0 28px}
+.picks-section + .picks-section{margin-top:64px}
 .picks-grid{
   display:grid;
   grid-template-columns:1fr;
@@ -58,7 +59,10 @@
   font:400 clamp(64px,8vw,88px)/.9 var(--f-d);
   letter-spacing:-.02em;
   text-transform:uppercase;
+  text-align:center;
+  padding:0 16px;
 }
+.pick-tile-mark-long{font-size:clamp(40px,5.2vw,58px)}
 .pick-tile-label{
   font:800 12px/1 var(--f-b);
   letter-spacing:.22em;
@@ -83,6 +87,13 @@
   flex:1;
 }
 .pick-card .btn{align-self:flex-start}
+.pick-soon{
+  margin:0;
+  font:800 13px/1 var(--f-b);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--mute);
+}
 .picks-page .nav{
   background:rgba(14,14,12,.86);
   backdrop-filter:blur(12px);

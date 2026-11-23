@@ -60,19 +60,21 @@
     <p class="picks-disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
   </header>
 
+  <!--
+    Product images are on-brand typographic placeholders.
+    Amazon Associates rules require official images from SiteStripe or the Product Advertising API.
+    Affiliate tag is hardcoded as TAG_PENDING in each href so links work without JavaScript.
+    Replace TAG_PENDING in js/amazon-tag.js and in the hrefs when the tracking tag is issued.
+    Official Amazon titles verified 22 Nov 2026 (America/Denver):
+    UpNourish (https://www.amazon.com/dp/B0976CG3QY): UpNourish Chocolate Vegan Protein Powder 54 Superfoods Powder,1.5 Billion CFU Probiotics 21g Plant Based Protein,No Sugar No Dairy No GMO Dairy Free,Meal Replacement Shake Keto-Friendly Low-Carb Diet,15 Servings
+    PBfit (https://www.amazon.com/dp/B01KKEECLS): PBfit Classic Peanut Butter Powder 30 Oz, Peanut Spread with 8g Protein
+    Dr. Murray's (https://www.amazon.com/dp/B0GVLFMT2N): Dr. Murray's Organic Plant Protein Powder, 7g Fiber, Chocolate, Keto, 1 lb
+    Ninja Blast (https://www.amazon.com/dp/B0DBN6DS6F): Ninja Blast Portable Blender, Cordless, 18oz Vessel, BC151MB
+    Bone conduction headphones: brand and exact listing could not be confirmed from the cut-off order screenshot, so this card has no Amazon link.
+  -->
   <section class="picks-section" aria-labelledby="picks-supplements">
-    <h2 class="h3" id="picks-supplements">Supplements</h2>
+    <h2 class="h3" id="picks-supplements">Supplements and nutrition</h2>
     <ul class="picks-grid">
-      <!--
-        Card image is an on-brand typographic placeholder.
-        Amazon Associates rules require product images from SiteStripe or the Product Advertising API.
-        Swap this tile for the official image once the Associates account is live.
-        Official Amazon listing title (verified 2026-11-22 from https://www.amazon.com/dp/B0976CG3QY):
-        UpNourish Chocolate Vegan Protein Powder 54 Superfoods Powder,1.5 Billion CFU Probiotics 21g Plant Based Protein,No Sugar No Dairy No GMO Dairy Free,Meal Replacement Shake Keto-Friendly Low-Carb Diet,15 Servings
-        The card uses the product name only, and leaves off the keyword list and meal-replacement or keto wording.
-        Affiliate tag is hardcoded as TAG_PENDING in the href so the link works without JavaScript.
-        Replace TAG_PENDING in js/amazon-tag.js and in this href when the tracking tag is issued.
-      -->
       <li class="pick-card">
         <div class="pick-tile" aria-hidden="true">
           <span class="pick-tile-mark">UPN</span>
@@ -82,6 +84,62 @@
           <h3>UpNourish Chocolate Vegan Protein Powder</h3>
           <p class="pick-blurb">Chocolate plant-based protein powder</p>
           <a class="btn btn-sm" href="https://www.amazon.com/dp/B0976CG3QY?tag=TAG_PENDING" data-amazon-asin="B0976CG3QY" target="_blank" rel="nofollow sponsored noopener">View on Amazon</a>
+        </div>
+      </li>
+      <li class="pick-card">
+        <div class="pick-tile" aria-hidden="true">
+          <span class="pick-tile-mark">PB</span>
+          <span class="pick-tile-label">Peanut</span>
+        </div>
+        <div class="pick-body">
+          <h3>PBfit Classic Peanut Butter Powder</h3>
+          <p class="pick-blurb">Powdered peanut butter for shakes and cooking</p>
+          <a class="btn btn-sm" href="https://www.amazon.com/dp/B01KKEECLS?tag=TAG_PENDING" data-amazon-asin="B01KKEECLS" target="_blank" rel="nofollow sponsored noopener">View on Amazon</a>
+        </div>
+      </li>
+      <li class="pick-card">
+        <div class="pick-tile" aria-hidden="true">
+          <span class="pick-tile-mark">DM</span>
+          <span class="pick-tile-label">Protein</span>
+        </div>
+        <div class="pick-body">
+          <h3>Dr. Murray's Organic Plant Protein Powder, Chocolate</h3>
+          <p class="pick-blurb">Chocolate plant protein powder</p>
+          <a class="btn btn-sm" href="https://www.amazon.com/dp/B0GVLFMT2N?tag=TAG_PENDING" data-amazon-asin="B0GVLFMT2N" target="_blank" rel="nofollow sponsored noopener">View on Amazon</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="picks-section" aria-labelledby="picks-kitchen">
+    <h2 class="h3" id="picks-kitchen">Kitchen</h2>
+    <ul class="picks-grid">
+      <li class="pick-card">
+        <div class="pick-tile" aria-hidden="true">
+          <span class="pick-tile-mark pick-tile-mark-long">NINJA</span>
+          <span class="pick-tile-label">Blender</span>
+        </div>
+        <div class="pick-body">
+          <h3>Ninja Blast Portable Blender</h3>
+          <p class="pick-blurb">Cordless portable blender for shakes and everyday use</p>
+          <a class="btn btn-sm" href="https://www.amazon.com/dp/B0DBN6DS6F?tag=TAG_PENDING" data-amazon-asin="B0DBN6DS6F" target="_blank" rel="nofollow sponsored noopener">View on Amazon</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="picks-section" aria-labelledby="picks-training">
+    <h2 class="h3" id="picks-training">Training gear</h2>
+    <ul class="picks-grid">
+      <li class="pick-card pick-card-soon">
+        <div class="pick-tile" aria-hidden="true">
+          <span class="pick-tile-mark">GEAR</span>
+          <span class="pick-tile-label">Soon</span>
+        </div>
+        <div class="pick-body">
+          <h3>Bone conduction headphones, coming soon</h3>
+          <p class="pick-blurb">Waterproof bone conduction headphones. The exact listing will be added once the product is confirmed.</p>
+          <p class="pick-soon">Coming soon</p>
         </div>
       </li>
     </ul>
