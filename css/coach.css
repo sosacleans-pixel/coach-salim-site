@@ -69,6 +69,7 @@ html.nav-lock,html.nav-lock body{overflow:hidden}
 .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero-ghost{position:absolute;right:-2vw;bottom:-6vw;font:400 clamp(180px,38vw,620px)/.8 var(--f-d);color:transparent;-webkit-text-stroke:1.5px rgba(255,202,16,.16);letter-spacing:-.02em;user-select:none;white-space:nowrap}
 .hero-copy{position:relative;z-index:2}
+@media (min-width:900px){.hero-copy{padding-left:clamp(48px,5vw,96px)}}
 .hero-title{font:400 clamp(58px,10.5vw,176px)/.86 var(--f-d);text-transform:uppercase;margin-bottom:24px}
 .hero-title .line{display:block;overflow:hidden;padding-bottom:.04em}
 .hero-title .accent{color:var(--volt)}
