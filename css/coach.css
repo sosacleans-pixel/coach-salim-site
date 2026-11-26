@@ -115,12 +115,12 @@ html.nav-lock,html.nav-lock body{overflow:hidden}
 .cards{display:grid;gap:18px;padding:0 var(--pad);max-width:1400px;margin:0 auto;align-items:stretch}
 @media (min-width:760px){.cards{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1200px){.cards{grid-template-columns:repeat(4,1fr)}}
-.card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--ink-2);border:1px solid #2a2a26;border-radius:var(--r);padding:30px 26px 26px;transition:border-color .4s,transform .5s var(--ease)}
+.card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--ink-2);border:1px solid #2a2a26;border-radius:var(--r);padding:30px 26px 26px;transition:border-color .4s;transform:none}
 /* Subgrid lines up number, kind, title, body, ticks and button across a row. Six children: .card-num, .card-kind, h3, p, .ticks, .card-link */
 @supports (grid-template-rows:subgrid){
   .card{display:grid;grid-template-rows:subgrid;grid-row:span 6;height:auto}
 }
-.card:hover{border-color:var(--volt);transform:translateY(-6px)}
+.card:hover{border-color:var(--volt)}
 .card-num{font:400 56px/1 var(--f-d);color:transparent;-webkit-text-stroke:1px var(--volt)}
 .card-kind{margin:16px 0 8px;font:800 11px/1 var(--f-b);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
 .card h3{font:400 clamp(28px,2.3vw,34px)/1 var(--f-d);text-transform:uppercase;margin-bottom:14px}
