@@ -1,10 +1,9 @@
 /* Links that should open in a new tab (fallback for links added by JavaScript or missed in the HTML).
    - Any http(s) link whose hostname differs from this page's
    - mailto: links (so the inbox or mail app opens without leaving the site)
-   - "Things I Use and Trust" /store/ links
    Each gets target="_blank" rel="noopener", so the original page stays open.
-   Links that already have a target are left alone. Same-host links other than /store/,
-   relative and #anchor links, plus tel:, sms: and javascript: links, are never touched.
+   Links that already have a target are left alone. Same-host, relative and #anchor
+   links, plus tel:, sms: and javascript: links, are never touched.
    Doesn't cancel clicks, so the GA4 click events (beacon transport) fire exactly as before. */
 (function () {
   'use strict';
@@ -12,14 +11,10 @@
     var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
     if (rel.indexOf('noopener') === -1) { rel.push('noopener'); a.setAttribute('rel', rel.join(' ')); }
   }
-  function isStorePath(pathname) {
-    return /^\/store\/?$/i.test(pathname);
-  }
   function shouldOpenNewTab(href) {
     if (/^mailto:/i.test(href)) return true;
     var u;
     try { u = new URL(href, location.href); } catch (e) { return false; }
-    if (isStorePath(u.pathname)) return true;
     if (!/^https?:$/.test(u.protocol)) return false;
     return u.hostname !== location.hostname;
   }
