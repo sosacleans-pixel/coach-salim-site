@@ -1,11 +1,10 @@
 /**
  * Amazon Associates tracking tag for Coach's Picks.
- * Swap TAG_PENDING for the live Associates tag in AMAZON_TAG below
- * and in the matching href query strings when the account is ready.
- * Anchor hrefs already include tag=TAG_PENDING so links work without JavaScript.
+ * Tag jorgesheyaime-20 is also hardcoded in each product href
+ * so links work without JavaScript.
  */
 (function () {
-  var AMAZON_TAG = "TAG_PENDING";
+  var AMAZON_TAG = "jorgesheyaime-20";
   document.querySelectorAll("a[data-amazon-asin]").forEach(function (link) {
     var asin = link.getAttribute("data-amazon-asin");
     if (!asin) return;
