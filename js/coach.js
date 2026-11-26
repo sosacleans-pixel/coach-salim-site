@@ -102,8 +102,7 @@
   });
   gsap.from('.stat', { y: 50, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.stats', start: 'top 85%' } });
 
-  // fromTo with explicit end values: .card has a CSS transform transition, which made gsap.from read a mid-transition end state and leave cards stuck 80px low (overlapping the book)
-  gsap.fromTo('.card', { y: 80, opacity: 0, rotate: 1.5 }, { y: 0, opacity: 1, rotate: 0, duration: 1, stagger: .1, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '.cards', start: 'top 80%' } });
+  // Program cards stay untransformed (no stagger, rotate, or translate) so a row stays level.
   gsap.from('.book > *', { y: 60, opacity: 0, duration: 1, stagger: .15, ease: 'power3.out', scrollTrigger: { trigger: '.book', start: 'top 80%' } });
   gsap.from('.spec', { y: 40, opacity: 0, duration: .7, stagger: .06, ease: 'power3.out', scrollTrigger: { trigger: '.spec-grid', start: 'top 85%' } });
   gsap.from('.rev', { x: 80, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.rev-track', start: 'top 85%' } });
@@ -142,11 +141,7 @@
       b.addEventListener('pointermove', function (e) { var r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .3); yTo((e.clientY - r.top - r.height / 2) * .4); });
       b.addEventListener('pointerleave', function () { xTo(0); yTo(0); });
     });
-    $$('.card').forEach(function (c) {
-      c.addEventListener('pointermove', function (e) { var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-        gsap.to(c, { rotateY: x * 8, rotateX: -y * 6, transformPerspective: 900, duration: .5, ease: 'power2.out' }); });
-      c.addEventListener('pointerleave', function () { gsap.to(c, { rotateY: 0, rotateX: 0, duration: .8, ease: 'elastic.out(1,.5)' }); });
-    });
+    // Program cards have no pointer tilt or parallax, so they stay level in the grid.
   }
   window.addEventListener('load', function () { ScrollTrigger.refresh(); });
 })();
