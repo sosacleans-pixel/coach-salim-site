@@ -1,2 +1,2 @@
-/* Destination for old /store/ links. Coach's Picks is the current on-site shop page. */
-window.COACH_STOREFRONT_URL = '/picks/';
+/* Destination for old /store/ links. Coach's Picks now lives on achallengetomove.com. */
+window.COACH_STOREFRONT_URL = 'https://achallengetomove.com/#coachs-picks';
